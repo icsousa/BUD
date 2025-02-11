@@ -141,6 +141,7 @@ body{
 
 .toggle-container{
     position: absolute;
+    border-radius: 1rem;
     top: 0;
     left: 50%;
     width: 50%;
@@ -151,6 +152,7 @@ body{
 }
 
 .container.active .toggle-container{
+    border-radius: 1rem;
     transform: translateX(-100%);
 }
 
