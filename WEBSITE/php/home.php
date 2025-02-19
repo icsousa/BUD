@@ -1,0 +1,51 @@
+<?php 
+    session_start(); 
+
+    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['pass']) == true)) {
+        unset($_SESSION['email']);
+        unset($_SESSION['pass']);
+        header('Location: singin_up.php');
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style(home).css">
+    <title>BUD - HOME</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul class="navlinks">
+                <li><a href="perfil.php">Perfil</a></li>
+                <li class="select"><a href="home.php"> <img src="logo.png"></a></li>
+                <li><a href="pistas.php">Pistas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="form__container">
+            <div class="container__text">
+                <h1 class="animated__text">O melhor amigo do piloto <span></span></h1>
+                <p>Utilize a <i><b>"barra de navagação"</i></b> ⬆️ para aceder ao seu <b>PERFIL</b>, onde pode alterar os seus dados, ou aceder as <b>PISTAS</b>, para adicionar e visualizar os seus tempos, bem como consultar os de outros utilizadores.</p> 
+            </div>
+            
+            <div class="social">
+                <p>Entre no nosso Discord e visite as redes do nosso desenvolvedor.</p>
+                
+                <div class="social-icons">
+                    <a href="https://github.com/icsousa" target="_blank"  class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://discord.gg/V9mXuY2eUv" target="_blank"  class="icon"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.instagram.com/ivoocks/" target="_blank"  class="icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
