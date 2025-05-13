@@ -1,0 +1,533 @@
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700,1&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Clash Display", arial, sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+
+}
+
+.spacer {
+    height: 15vh;
+}
+
+body{
+    overflow-x: hidden;
+    background: #111111 ;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+.container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.forget {
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    opacity: 60%;
+    transition: all 0.3s ease-out;
+}
+
+.forget:hover {
+    opacity: 100%;
+}
+
+.logo {
+    margin-bottom: auto;
+    z-index: 10;
+    transition: all 0.3s ease-out;
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+    display: block;
+    padding-top: 50px;
+    margin-left: 5px;
+    transition: all 0.3s ease-out;
+}
+
+.logo img:hover {
+    transform: translateY(-5px);
+}
+
+.sombra {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    background-color: #fff; 
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(20px);
+    transition: all 0.3s ease-out;
+}
+
+.container form{
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 80px 150px 80px;
+}
+
+.tittle__container {
+    background-color: #111111;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    font-size: 60px;
+}
+
+
+.input{
+    background-color: #eee;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    margin-top: 20px;
+}
+
+.inputSubmit{
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 30px;
+    color: #fff;
+    border: 4px solid #fff;
+    background-color: #111111;
+    box-shadow: 4px 4px 0 0 #111111,
+                8px 8px 0 0 #fff;
+    transition: all 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.inputSubmit::before{
+    z-index: -1;
+    content: '';
+    background: linear-gradient(to left, #008100, #003000);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: var(--eixoY);
+    left:var(--eixoX);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+}
+
+
+.inputSubmit:hover{
+    background-color: none;
+    box-shadow: 5px 5px 0 0 #111111,
+                10px 10px 0 0 #fff;
+    transform: translate(-4px,-4px);
+}
+
+.inputSubmit:hover::before{
+    width: 1000px;
+    height: 1000px;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+}
+
+.toggle{
+    background-color: #000000;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel h1{
+    font-size: 100px;
+}
+
+.toggle-panel p{
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+.hidden{
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 30px;
+    color: #fff;
+    border: 4px solid #fff;
+    background-color: #000;
+    box-shadow: 4px 4px 0 0 #000,
+                8px 8px 0 0 #fff;
+    transition: all 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hidden::before{
+    z-index: -1;
+    content: '';
+    background: linear-gradient(to left, #FFDD00, #5a4e00);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: var(--eixoY);
+    left:var(--eixoX);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+}
+
+
+.hidden:hover{
+    color: #000;
+    background-color: none;
+    box-shadow: 5px 5px 0 0 #111111,
+                10px 10px 0 0 #fff;
+    transform: translate(-4px,-4px);
+}
+
+.hidden:hover::before{
+    width: 1000px;
+    height: 1000px;
+}
+
+.erro {
+    margin-top: 10px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 20px;
+    color: #9c161d;
+}
+
+.success {
+    margin-top: 10px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 20px;
+    color: #008c43;
+}
+
+@media (max-width: 1000px) {
+    
+    .form-container{
+        height: 50%;
+    }
+    
+    .sign-in{
+        width: 100%;
+    }
+    
+    .container.active .sign-in{
+        transform: translateY(100%);
+    }
+    
+    .sign-up{
+        width: 100%;
+    }
+    
+    .container.active .sign-up{
+        transform: translateY(100%);
+    }
+    
+    .toggle-container{
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+    
+    .container.active .toggle-container{
+        transform: translateY(-100%);
+    }
+    
+    .toggle{
+        z-index: 100;
+        left: auto;
+        width: 100%;
+        height: 200%;
+        transform: translateY(0);
+    }
+    
+    .container.active .toggle{
+        transform: translateY(50%);
+    }
+    
+    .toggle-panel{
+        height: 50%;
+        width: 100%;
+        left: 0;
+        transform: translateY(0);
+    }
+    
+    .toggle-left{
+        top: 0;
+        transform: translateY(-100%);
+    }
+    
+    .container.active .toggle-left{
+        background-color: #000;
+        transform: translateY(-100%);
+    }
+    
+    .toggle-right{
+        bottom: 0;
+        transform: translateY(0);
+    }
+    
+    .container.active .toggle-right{
+        background-color: #000;
+        transform: translateY(200%);
+    }
+    
+    .toggle-panel h1{
+        font-size: 50px;
+    }
+    
+    .toggle-panel p{
+        font-size: 16px;
+        font-weight: 200;
+    }
+    
+    .forget {
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .tittle__container {
+        font-size: 25px;
+    }
+    
+    .tittle__container h1{
+        padding-top: 50px;
+    }
+    
+    .input{
+        padding: 5px 10px;
+        font-size: 15px;
+        width: 100%;
+        outline: none;
+        margin-top: 10px;
+    }
+
+    .erro {
+        margin-top: 10px;
+        padding: 1rem;
+        text-align: center;
+        font-size: 12px;
+        color: #9c161d;
+    }
+    
+    .success {
+        margin-top: 10px;
+        padding: 1rem;
+        text-align: center;
+        font-size: 12px;
+        color: #008c43;
+    }
+    
+    .inputSubmit{
+        margin-top: 20px;
+        padding: 10px 25px;
+        font-size: 25px;
+        color: #fff;
+        border: 2px solid #fff;
+        background-color: #111111;
+        box-shadow: 2px 2px 0 0 #111111,
+                    4px 4px 0 0 #fff;
+        transition: all 0.3s ease-out;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .inputSubmit::before{
+        z-index: -1;
+        content: '';
+        background: linear-gradient(to left, #008100, #003000);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        position: absolute;
+        top: var(--eixoY);
+        left:var(--eixoX);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    }
+    
+    
+    .inputSubmit:hover{
+        background-color: none;
+        box-shadow: 3px 3px 0 0 #111111,
+                    6px 6px 0 0 #fff;
+        transform: translate(-2px,-2px);
+    }
+    
+    .inputSubmit:hover::before{
+        width: 1000px;
+        height: 1000px;
+    }
+    
+    .hidden{
+        margin-top: 20px;
+        padding: 10px 25px;
+        font-size: 25px;
+        color: #fff;
+        border: 2px solid #fff;
+        background-color: #000;
+        box-shadow: 2px 2px 0 0 #000,
+                    4px 4px 0 0 #fff;
+        transition: all 0.3s ease-out;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .hidden::before{
+        z-index: -1;
+        content: '';
+        background: linear-gradient(to left, #FFDD00, #5a4e00);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        position: absolute;
+        top: var(--eixoY);
+        left:var(--eixoX);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    }
+    
+    
+    .hidden:hover{
+        color: #000;
+        background-color: none;
+        box-shadow: 3px 3px 0 0 #000,
+                    6px 6px 0 0 #fff;
+        transform: translate(-2px,-2px);
+    }
+    
+    .hidden:hover::before{
+        width: 1000px;
+        height: 1000px;
+    }
+}
+
+
+
+
