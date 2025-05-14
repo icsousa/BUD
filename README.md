@@ -52,7 +52,7 @@ mv WEBSITE/* /caminho/para/htdocs/
 
 ### 4. Configure o arquivo config.php com as credenciais do seu banco de dados:
 ```php
-$conn = mysqli_connect("localhost", "usuario", "senha", "nome_banco");
+$conn = mysqli_connect("localhost", "user", "pass", "nb");
 ```
 
 ### 5. Acesse o site via navegador:
